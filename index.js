@@ -1,30 +1,13 @@
-var solution = require('./codility/4_countingElements/missingInteger.js')
+var _ = require('lodash')
+var solution = require('./codility/5_prefixSums/passingCars.js')
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+var N = 100000
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+arr = []
+_.times(N, (i) => {
+  arr.push(_.random(0, 1))
+})
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
-
-var arr = []
-for (var i = 0; i < 100000; i++) {
-    arr.push(i-64534)
-}
-arr = shuffle(arr)
-
-console.time("ha")
+console.time("dur")
 console.log(solution(arr))
-console.timeEnd("ha")
+console.timeEnd("dur")
