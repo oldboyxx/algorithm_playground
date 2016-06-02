@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/oldboyxx/algorithm_playground/issues"
   },
-  "homepage": "https://github.com/oldboyxx/algorithm_playground#readme"
+  "homepage": "https://github.com/oldboyxx/algorithm_playground#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "lodash": "^4.13.1",
+    "performance-now": "^0.2.0"
+  }
 }
