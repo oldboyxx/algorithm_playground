@@ -8,22 +8,19 @@ function partition(A, wall, pivot) {
   var mid = wall + Math.round((pivot-wall)/2)
   swap(A, pivot, mid)
 
-  for (var i = wall; i <= pivot; i++) {
+  for (var i = wall; i < pivot; i++) {
     if (A[i] < A[pivot]) {
       swap(A, i, wall)
       wall++
-
-    } else if (i === pivot) {
-      swap(A, pivot, wall)
     }
   }
 
+  swap(A, pivot, wall)
   return wall
 }
 
 function divide(A, start, end) {
   var wall = partition(A, start, end)
-
   if (wall-start > 0) divide(A, start, wall-1)
   if (end-wall > 0) divide(A, wall+1, end)
 }
