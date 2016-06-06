@@ -1,16 +1,13 @@
 // 100%
 function solution(A) {
-  var curr = 1
-  var result = 1
-
+  var len = A.length
   A.sort((a, b) => a - b)
 
-  A.forEach(n => {
-    if (n !== curr) result = 0
-    curr++
-  })
+  for (var i = 0; i < len; i++) {
+    if (A[i] !== i+1) return 0
+  }
 
-  return result
+  return 1
 }
 
 module.exports = solution

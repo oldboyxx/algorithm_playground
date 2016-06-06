@@ -1,30 +1,22 @@
 // 100%
 function solution(X, A) {
+  var len = A.length
   var neededSum = 0
-  for (var i = 1; i <= X; i++) {
-    neededSum += i
-  }
-
+  var sum = 0
   var fallen = {}
-  var currSum = 0
-  var neededPos
 
-  for (var i = 0; i < A.length; i++) {
-    var n = A[i]
+  for (var i = 1; i <= X; i++) neededSum += i
 
-    if (!fallen[n]) {
-      fallen[n] = true
-      currSum += n
-    }
+  for (var i = 0; i < len; i++) {
 
-    if (currSum === neededSum) {
-      neededPos = i
-      break
+    if (!fallen[A[i]]) {
+      fallen[A[i]] = true
+      sum += A[i]
+      if (sum === neededSum) return i
     }
   }
 
-  if (typeof neededPos === 'undefined') return -1
-  return neededPos
+  return -1
 }
 
 module.exports = solution

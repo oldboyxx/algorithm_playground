@@ -1,12 +1,6 @@
-// 62%
+// 100%
 function solution(A, B, K) {
-  var divCount = 0
-
-  for (var i = A; i <= B; i++) {
-    if (i % K === 0) divCount++
-  }
-
-  return divCount
+  return Math.floor(B / K) - Math.floor((A - 1) / K)
 }
 
 module.exports = solution

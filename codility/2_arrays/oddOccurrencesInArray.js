@@ -1,18 +1,17 @@
-// 77%
+// 100%
 function solution(A) {
-  var B = []
+  A.sort((a, b) => a-b)
 
-  A.forEach(n => {
-    var index = B.indexOf(n)
+  var len = A.length
+  var count = 0
 
-    if (index > -1) {
-      B.splice(index, 1)
-    } else {
-      B.push(n)
+  for (var i = 0; i < len; i++) {
+    A[i] === A[i-1] ? count++ : count = 1
+
+    if (count%2 === 1 && A[i] !== A[i+1]) {
+      return A[i]
     }
-  })
-
-  return B[0]
+  }
 }
 
 module.exports = solution

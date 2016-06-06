@@ -1,30 +1,40 @@
-// 62%
+// 100%
 function solution(S, P, Q) {
-  var M = P.length
   S = S.split('')
+  var Slen = S.length
+  var Qlen = P.length
+  var factors = ['A', 'C', 'G', 'T']
+  var sums = {}
+  var results = []
 
-  var factors = { 'A': 1, 'C': 2, 'G': 3, 'T': 4 }
-  result = []
+  for (var i = Slen-1; i >= 0; i--) {
+    sums[i] = {}
 
-  for (var i = 0; i < M; i++) {
-    var start = P[i]
-    var end = Q[i]
-    var found = []
-
-    for (var j = start; j <= end; j++) {
-      if (!found[S[j]]) found[S[j]] = factors[S[j]]
-      if (found['A']) break;
-    }
-
-    var min = 4
-    for (var key in found) {
-      if (found[key] < min) min = found[key]
-    }
-
-    result.push(min)
+    factors.forEach(f => {
+      var next = i === Slen-1 ? 0 : sums[i+1][f]
+      sums[i][f] = S[i] === f ? next+1 : next
+    })
   }
 
-  return result
+  for (var i = 0; i < Qlen; i++) {
+    var start = P[i]
+    var end = Q[i]+1
+    var hasA = sums[start].A - (sums[end] ? sums[end].A : 0)
+    var hasC = sums[start].C - (sums[end] ? sums[end].C : 0)
+    var hasG = sums[start].G - (sums[end] ? sums[end].G : 0)
+
+    if (hasA) {
+      results.push(1)
+    } else if (hasC) {
+      results.push(2)
+    } else if (hasG) {
+      results.push(3)
+    } else {
+      results.push(4)
+    }
+  }
+
+  return results
 }
 
 module.exports = solution
