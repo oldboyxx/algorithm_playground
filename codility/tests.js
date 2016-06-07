@@ -284,3 +284,48 @@ describe('Algorithm', () => {
   })
 })
 
+// minAvgTwoSlice
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([4, 2, 2, 5, 1, 5, 8])).to.equal(1)
+    expect(solution([4, 2, 2, 5, 1, 5, 8, 0, 0, 10])).to.equal(7)
+    expect(solution([5, 5, 3, 4])).to.equal(2)
+    expect(solution([1, 2, 0, 0])).to.equal(2)
+    expect(solution([-5, 10, 0, 1, 100, -50, 50])).to.equal(5)
+    expect(solution([1, 2])).to.equal(0)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+// triangle
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([10, 2, 5, 1, 8, 20])).to.equal(1)
+    expect(solution([10, 2])).to.equal(0)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
