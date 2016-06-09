@@ -471,3 +471,30 @@ describe('Algorithm', () => {
     done()
   })
 })
+
+// equiLeader
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([4, 3, 4, 4, 4, 2])).to.equal(2)
+    expect(solution([1, 1])).to.equal(1)
+    expect(solution([-50, 1])).to.equal(0)
+    expect(solution([2, 1, 5])).to.equal(0)
+    expect(solution([1, 1, 1, 1, 1])).to.equal(4)
+    expect(solution([1])).to.equal(0)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+

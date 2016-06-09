@@ -1,4 +1,4 @@
-//
+// 100%
 function solution(S) {
   var len = S.length
   var open = 0

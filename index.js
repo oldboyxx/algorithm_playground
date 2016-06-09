@@ -1,11 +1,11 @@
 var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
-var solution = require('./codility/7_stacksAndQueues/nesting')
+var solution = require('./codility/8_leader/equiLeader')
 
 // FIDDLE
 
-console.log(solution('()()')) // 1
+console.log(solution([1, 1])) // 1
 
 // TESTS
 
@@ -13,31 +13,22 @@ if (typeof describe === 'undefined') return
 describe('Algorithm', () => {
 
   it('is accurate', (done) => {
-    expect(solution('')).to.equal(1)
-    expect(solution('()()')).to.equal(1)
-    expect(solution('()(')).to.equal(0)
-    expect(solution(')()')).to.equal(0)
-    expect(solution('((()')).to.equal(0)
-    expect(solution('()())')).to.equal(0)
-    expect(solution(')((())')).to.equal(0)
-    expect(solution(')(')).to.equal(0)
-    expect(solution('())(()')).to.equal(0)
-    expect(solution('())(')).to.equal(0)
-    expect(solution('(((())))')).to.equal(1)
+    expect(solution([4, 3, 4, 4, 4, 2])).to.equal(2)
+    expect(solution([1, 1])).to.equal(1)
+    expect(solution([-50, 1])).to.equal(0)
+    expect(solution([2, 1, 5])).to.equal(0)
+    expect(solution([1, 1, 1, 1, 1])).to.equal(4)
+    expect(solution([1])).to.equal(0)
     done()
   })
 
   it('is fast', (done) => {
     var A = []
-    var sample = ['()']
-    for (var i = 1; i <= 200000; i++) A.push(_.sample(sample))
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
 
-    var B = []
-    for (var i = 1; i <= 100000; i++) B.push('(')
-    for (var i = 1; i <= 100000; i++) B.push(')')
-
-    time([A.join('')])
-    time([B.join('')])
+    time([A])
 
     done()
   })
