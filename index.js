@@ -1,11 +1,11 @@
 var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
-var solution = require('./codility/6_sorting/maxProductOfThree')
+var solution = require('./codility/7_stacksAndQueues/nesting')
 
 // FIDDLE
 
-console.log(solution([-3, 1, 2, -2, 5, 6]))
+console.log(solution('()()')) // 1
 
 // TESTS
 
@@ -13,17 +13,31 @@ if (typeof describe === 'undefined') return
 describe('Algorithm', () => {
 
   it('is accurate', (done) => {
-    expect(solution([-3, 1, 2, -2, 5, 6])).to.equal(60)
+    expect(solution('')).to.equal(1)
+    expect(solution('()()')).to.equal(1)
+    expect(solution('()(')).to.equal(0)
+    expect(solution(')()')).to.equal(0)
+    expect(solution('((()')).to.equal(0)
+    expect(solution('()())')).to.equal(0)
+    expect(solution(')((())')).to.equal(0)
+    expect(solution(')(')).to.equal(0)
+    expect(solution('())(()')).to.equal(0)
+    expect(solution('())(')).to.equal(0)
+    expect(solution('(((())))')).to.equal(1)
     done()
   })
 
   it('is fast', (done) => {
     var A = []
-    for (var i = 1; i <= 100000; i++) {
-      A.push(i)
-    }
+    var sample = ['()']
+    for (var i = 1; i <= 200000; i++) A.push(_.sample(sample))
 
-    time([A])
+    var B = []
+    for (var i = 1; i <= 100000; i++) B.push('(')
+    for (var i = 1; i <= 100000; i++) B.push(')')
+
+    time([A.join('')])
+    time([B.join('')])
 
     done()
   })

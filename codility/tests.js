@@ -329,3 +329,145 @@ describe('Algorithm', () => {
     done()
   })
 })
+
+// numberOfDiscIntersections
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([])).to.equal(0)
+    expect(solution([0, 1])).to.equal(1)
+    expect(solution([0, 1, 2])).to.equal(3)
+    expect(solution([0, 1, 2, 3, 4])).to.equal(10)
+    expect(solution([1, 5, 2, 1, 4, 0])).to.equal(11)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.random(0, 5))
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+// fish
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([0], [0])).to.equal(1)
+    expect(solution([3, 4], [0, 1])).to.equal(2)
+    expect(solution([3, 4], [1, 0])).to.equal(1)
+    expect(solution([3, 4, 5, 6], [1, 1, 1, 1])).to.equal(4)
+    expect(solution([3, 4, 5, 6], [0, 0, 0, 0])).to.equal(4)
+    expect(solution([4, 3, 2, 1, 5], [0, 1, 0, 0, 0])).to.equal(2)
+    expect(solution([10, 3, 2, 1, 5], [1, 0, 0, 0, 0])).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var B = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.random(0, 1000000000))
+      B.push(_.random(0, 1))
+    }
+
+    time([A, B])
+
+    done()
+  })
+})
+
+// brackets
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution('')).to.equal(1)
+    expect(solution('{[()()]}')).to.equal(1)
+    expect(solution('[)()]')).to.equal(0)
+    expect(solution('[()](')).to.equal(0)
+    expect(solution(')[()]')).to.equal(0)
+    expect(solution('{([)()]}')).to.equal(0)
+    expect(solution('{[(())]})')).to.equal(0)
+    expect(solution('()()()()()')).to.equal(1)
+    expect(solution('(((())))')).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var sample = ['(){}[]']
+    for (var i = 1; i <= 200000; i++) A.push(_.sample(sample))
+
+    var B = []
+    for (var i = 1; i <= 100000; i++) B.push('(')
+    for (var i = 1; i <= 100000; i++) B.push(')')
+
+    time([A.join('')])
+    time([B.join('')])
+
+    done()
+  })
+})
+
+// stoneWall
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1])).to.equal(1)
+    expect(solution([1, 2])).to.equal(2)
+    expect(solution([3, 1, 3])).to.equal(3)
+    expect(solution([2, 3, 2, 3])).to.equal(3)
+    expect(solution([8, 8, 5, 7, 9, 8, 7, 4, 8])).to.equal(7)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+// nesting
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution('')).to.equal(1)
+    expect(solution('()()')).to.equal(1)
+    expect(solution('()(')).to.equal(0)
+    expect(solution(')()')).to.equal(0)
+    expect(solution('((()')).to.equal(0)
+    expect(solution('()())')).to.equal(0)
+    expect(solution(')((())')).to.equal(0)
+    expect(solution(')(')).to.equal(0)
+    expect(solution('())(()')).to.equal(0)
+    expect(solution('())(')).to.equal(0)
+    expect(solution('(((())))')).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var sample = ['()']
+    for (var i = 1; i <= 200000; i++) A.push(_.sample(sample))
+
+    var B = []
+    for (var i = 1; i <= 100000; i++) B.push('(')
+    for (var i = 1; i <= 100000; i++) B.push(')')
+
+    time([A.join('')])
+    time([B.join('')])
+
+    done()
+  })
+})
