@@ -24,7 +24,7 @@ function solution(A, B) {
   return A.length
 }
 
-// 100%
+// 100% - NEED TO REWRITE
 function solution(A, B) {
   var len = A.length
   var stack = []

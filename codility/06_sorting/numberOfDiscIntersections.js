@@ -15,7 +15,7 @@ function solution(A) {
   return pairsCount
 }
 
-// 100%
+// 100% - NEED TO REWRITE
 function solution(A) {
   var len = A.length
   var pairs = 0

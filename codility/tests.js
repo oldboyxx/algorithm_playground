@@ -497,4 +497,100 @@ describe('Algorithm', () => {
   })
 })
 
+// dominator
+describe('Algorithm', () => {
 
+  it('is accurate', (done) => {
+    expect(solution([3, 4, 3, 2, 3, -1, 3, 3])).to.be.oneOf([0, 2, 4, 6, 7])
+    expect(solution([3, 3, 4, 3, 2, 3, -1])).to.be.oneOf([0, 1, 3, 5])
+    expect(solution([])).to.equal(-1)
+    expect(solution([1])).to.equal(0)
+    expect(solution([-50, 1])).to.equal(-1)
+    expect(solution([2, 1, 5])).to.equal(-1)
+    expect(solution([1, 1, 1, 1, 1])).to.be.oneOf([0, 1, 2, 3, 4])
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+// maxProfit
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([23171,21011,21123,21366,21013,21367])).to.equal(356)
+    expect(solution([])).to.equal(0)
+    expect(solution([1])).to.equal(0)
+    expect(solution([1, 2])).to.equal(1)
+    expect(solution([1, 2, 3])).to.equal(2)
+    expect(solution([3, 3])).to.equal(0)
+    expect(solution([3, 1])).to.equal(0)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 400000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+// maxDoubleSliceSum
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([3, 2, 6, -1, 4, 5, -1, 2])).to.equal(17)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+
+    done()
+  })
+})
+
+// maxSliceSum
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([6])).to.equal(6)
+    expect(solution([-5])).to.equal(-5)
+    expect(solution([1, 2, 3])).to.equal(6)
+    expect(solution([3, 2, -6, 4, 0])).to.equal(5)
+    expect(solution([6, 2, -100, 10])).to.equal(10)
+    expect(solution([-5, -10, 1, -15])).to.equal(1)
+    expect(solution([-5, -10, -1, -15])).to.equal(-1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 1000000; i++) {
+      A.push(_.random(-1000000, 1000000))
+    }
+
+    time([A])
+
+    done()
+  })
+})
