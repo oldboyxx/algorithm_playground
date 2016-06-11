@@ -4,7 +4,7 @@ function solution(N) {
 
   while (i * i < N) {
     if (N % i == 0) count += 2
-    i += 1
+    i++
   }
 
   if (i * i == N) count++

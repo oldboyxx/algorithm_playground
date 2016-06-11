@@ -594,3 +594,169 @@ describe('Algorithm', () => {
     done()
   })
 })
+
+// minPerimeterRectangle
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(30)).to.equal(22)
+    expect(solution(16)).to.equal(16)
+    expect(solution(1)).to.equal(4)
+    expect(solution(2)).to.equal(6)
+    done()
+  })
+
+  it('is fast', (done) => {
+    time([1000000000])
+    done()
+  })
+})
+
+// countFactors
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(24)).to.equal(8)
+    expect(solution(1)).to.equal(1)
+    expect(solution(2)).to.equal(2)
+    expect(solution(3)).to.equal(2)
+    expect(solution(12)).to.equal(6)
+    expect(solution(2147483647)).to.equal(2)
+    done()
+  })
+
+  it('is fast', (done) => {
+    time([2147483647])
+    done()
+  })
+})
+
+// peaks
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1])).to.equal(0)
+    expect(solution([1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2])).to.equal(3)
+    expect(solution([1, 2, 1, 2, 1, 1])).to.equal(2)
+    expect(solution([1, 2, 1, 2, 1])).to.equal(1)
+    expect(solution([1, 1, 1, 2, 1, 1])).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.random(0, 1))
+    }
+
+    time([A]) // 2.5s is ok
+  })
+})
+
+// flags
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1])).to.equal(0)
+    expect(solution([1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2])).to.equal(3)
+    expect(solution([1, 2, 1, 2, 1, 1])).to.equal(2)
+    expect(solution([1, 2, 1, 2, 1])).to.equal(2)
+    expect(solution([1, 1, 1, 2, 1, 1])).to.equal(1)
+    expect(solution([1, 2, 1, 2, 1, 2, 1])).to.equal(2)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 400000; i++) {
+      A.push(_.random(0, 100000000)) // 2.5s is ok
+    }
+
+    time([A])
+    done()
+  })
+})
+
+// countSemiPrimes
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(26, [1, 4, 16], [26, 10, 20])).to.deep.equal([10, 4, 0])
+    expect(solution(2, [1], [1])).to.deep.equal([0])
+    expect(solution(10, [1], [10])).to.deep.equal([4])
+    expect(solution(10, [4], [4])).to.deep.equal([1])
+    done()
+  })
+
+  it('is fast', (done) => {
+    var P = []
+    var Q = []
+    for (var i = 1; i <= 30000; i++) {
+      P.push(0)
+      Q.push(50000)
+    }
+
+    time([50000, P, Q])
+    done()
+  })
+})
+
+// countNonDivisible
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1])).to.deep.equal([0])
+    expect(solution([1, 2])).to.deep.equal([1, 0])
+    expect(solution([1, 2, 3, 4])).to.deep.equal([3, 2, 2, 1])
+    expect(solution([9, 6, 7, 10, 6])).to.deep.equal([4, 3, 4, 4, 3])
+    expect(solution([3, 1, 2, 3, 6])).to.deep.equal([2, 4, 3, 2, 0])
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 50000; i++) {
+      A.push(_.random(1, 2*50000))
+    }
+
+    time([A])
+    done()
+  })
+})
+
+// chocolatesByNumbers
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(10, 4)).to.equal(5)
+    expect(solution(10, 10)).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    time([10000000, 1])
+    done()
+  })
+})
+
+// commonPrimeDivisors
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([2, 3, 4], [2, 3, 5])).to.equal(2)
+    expect(solution([15, 10, 3], [75, 30, 5])).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var B = []
+    for (var i = 1; i <= 6000; i++) {
+      A.push(2147483647)
+      B.push(2147483647)
+    }
+
+    time([A, B])
+    done()
+  })
+})
