@@ -760,3 +760,100 @@ describe('Algorithm', () => {
     done()
   })
 })
+
+// fibFrog
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([])).to.equal(1)
+    expect(solution([0])).to.equal(1)
+    expect(solution([0, 0, 0])).to.equal(-1)
+    expect(solution([0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0])).to.equal(3)
+    expect(solution([0, 0, 0, 0])).to.equal(1)
+    expect(solution([1, 0, 0, 1, 0, 1])).to.equal(3)
+    expect(solution([1, 1, 1, 1, 1, 0, 0, 0])).to.equal(3)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.random(0, 1))
+    }
+
+    time([A])
+    done()
+  })
+})
+
+// minMaxDivision
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(3, 5, [2, 1, 5, 1, 2, 2, 2])).to.equal(6)
+    expect(solution(3, 0, [0, 0, 0, 0, 0, 0])).to.equal(0)
+    expect(solution(3, 5, [0, 5, 5, 0, 5, 0])).to.equal(5)
+    expect(solution(3, 5, [5, 5, 5, 5, 0, 0])).to.equal(10)
+    expect(solution(2, 5, [-5, 5, -5, 5])).to.equal(0)
+    expect(solution(2, 3, [3])).to.equal(3)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var sample = [0, 500]
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.sample(sample))
+    }
+
+    time([20, 500, A])
+    done()
+  })
+})
+
+// nailingPlanks
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1, 4, 5, 8], [4, 5, 9, 10], [4, 6, 7, 10, 2])).to.equal(4)
+    expect(solution([1], [1], [2])).to.equal(-1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var B = []
+    var C = []
+    for (var i = 1; i <= 30000; i++) {
+      A.push(i)
+      B.push(i)
+      C.push(_.random(1, 60000))
+    }
+
+    time([A, B, C])
+    done()
+  })
+})
+
+// countDistinctSlices
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(6, [3, 4, 5, 5, 2])).to.equal(9)
+    expect(solution(10, [1, 2, 3])).to.equal(6)
+    expect(solution(10, [1])).to.equal(1)
+    expect(solution(10, [1, 1, 1, 1])).to.equal(4)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([100000, A])
+    done()
+  })
+})
+

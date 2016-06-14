@@ -1,12 +1,12 @@
 var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
-var solution = require('./codility/12_euclideanAlgorithm/commonPrimeDivisors')
-var solution = require('./classic/random/getFibonacciSequence')
+var solution = require('./classic/random/getFibonacciNum')
+var solution = require('./codility/15_caterpillarMethod/countTriangles')
 
 // FIDDLE
 
-console.log(solution(10))
+console.log(solution([-5, -3, -1, 0, 3, 6])) // 5
 
 // TESTS
 
@@ -14,20 +14,20 @@ if (typeof describe === 'undefined') return
 describe('Algorithm', () => {
 
   it('is accurate', (done) => {
-    expect(solution([2, 3, 4], [2, 3, 5])).to.equal(2)
-    expect(solution([15, 10, 3], [75, 30, 5])).to.equal(1)
+    expect(solution([-5, -3, -1, 0, 3, 6])).to.equal(5)
+    expect(solution([1])).to.equal(1)
+    expect(solution([1, -1, 1, -1])).to.equal(1)
+    expect(solution([1, -1, 1, -1, -2])).to.equal(2)
     done()
   })
 
   it('is fast', (done) => {
     var A = []
-    var B = []
-    for (var i = 1; i <= 6000; i++) {
-      A.push(2147483647)
-      B.push(2147483647)
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.random(-2000000000, 2000000000))
     }
 
-    time([A, B])
+    time([A])
     done()
   })
 })
