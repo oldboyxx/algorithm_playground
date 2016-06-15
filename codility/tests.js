@@ -857,3 +857,141 @@ describe('Algorithm', () => {
   })
 })
 
+// countTriangles
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([10, 2, 5, 1, 8, 12])).to.equal(4)
+    expect(solution([1])).to.equal(0)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 1000; i++) {
+      A.push(_.random(1, 1000000000))
+    }
+
+    time([A])
+    done()
+  })
+})
+
+// absDistinct
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1, 2, 3, 4, 5])).to.equal(5)
+    expect(solution([1, 2, 3, -4, -5])).to.equal(5)
+    expect(solution([1, 5, 4, -4, -5])).to.equal(3)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+    done()
+  })
+})
+
+// minAbsSumOfTwo
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([5])).to.equal(10)
+    expect(solution([-5])).to.equal(10)
+    expect(solution([1, 4])).to.equal(2)
+    expect(solution([-1, -4])).to.equal(2)
+    expect(solution([4, -4])).to.equal(0)
+    expect(solution([1, 4, -3])).to.equal(1)
+    expect(solution([10, 15, 20, -1])).to.equal(2)
+    expect(solution([10, -15, 1, 1])).to.equal(2)
+    expect(solution([-8, 4, 5, -10, 3])).to.equal(3)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(_.random(-1000000000, 1000000000))
+    }
+
+    time([A])
+    done()
+  })
+})
+
+// maxNonoverlappingSegments
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([])).to.equal(0)
+    expect(solution([1], [1])).to.equal(1)
+    expect(solution([3, 3, 3], [3, 3, 3])).to.equal(1)
+    expect(solution([1, 3, 7, 9, 9], [5, 6, 8, 9, 10])).to.equal(3)
+    expect(solution([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])).to.equal(5)
+    expect(solution([1, 2, 3, 4, 5], [1, 2, 3, 5, 5])).to.equal(4)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    var B = []
+    for (var i = 1; i <= 30000; i++) {
+      A.push(i)
+      B.push(i)
+    }
+
+    time([A, B])
+    done()
+  })
+})
+
+// tieRopes
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution(5, [2])).to.equal(0)
+    expect(solution(5, [5])).to.equal(1)
+    expect(solution(5, [5, 4])).to.equal(1)
+    expect(solution(5, [5, 5])).to.equal(2)
+    expect(solution(4, [1, 2, 3, 4, 1, 1 ,3])).to.equal(3)
+    expect(solution(5, [4, 4, 1, 3 ])).to.equal(1)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([2000, A])
+    done()
+  })
+})
+
+// numberSolitaire
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution([1, -2, 0, 9, -1, -2])).to.equal(8)
+    expect(solution([1, 2])).to.equal(3)
+    done()
+  })
+
+  it('is fast', (done) => {
+    var A = []
+    for (var i = 1; i <= 100000; i++) {
+      A.push(i)
+    }
+
+    time([A])
+    done()
+  })
+})
+

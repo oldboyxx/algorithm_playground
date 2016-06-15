@@ -1,12 +1,11 @@
 var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
-var solution = require('./classic/random/getFibonacciNum')
-var solution = require('./codility/15_caterpillarMethod/countTriangles')
+var solution = require('./codility/17_dynamicProgramming/numberSolitaire')
 
 // FIDDLE
 
-console.log(solution([-5, -3, -1, 0, 3, 6])) // 5
+console.log(solution([1, -2, 0, 9, -1, -2])) // 8
 
 // TESTS
 
@@ -14,17 +13,15 @@ if (typeof describe === 'undefined') return
 describe('Algorithm', () => {
 
   it('is accurate', (done) => {
-    expect(solution([-5, -3, -1, 0, 3, 6])).to.equal(5)
-    expect(solution([1])).to.equal(1)
-    expect(solution([1, -1, 1, -1])).to.equal(1)
-    expect(solution([1, -1, 1, -1, -2])).to.equal(2)
+    expect(solution([1, -2, 0, 9, -1, -2])).to.equal(8)
+    expect(solution([1, 2])).to.equal(3)
     done()
   })
 
   it('is fast', (done) => {
     var A = []
     for (var i = 1; i <= 100000; i++) {
-      A.push(_.random(-2000000000, 2000000000))
+      A.push(i)
     }
 
     time([A])
