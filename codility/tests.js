@@ -995,3 +995,43 @@ describe('Algorithm', () => {
   })
 })
 
+// treeHeight
+describe('Algorithm', () => {
+
+  var T1 = { x: 5,
+    l: { x: 3,
+       l: { x: 20, l: null, r: null },
+       r: { x: 21, l: null, r: { x: 5,
+    l: { x: 3,
+       l: { x: 20, l: null, r: null },
+       r: { x: 21, l: null, r: null } },
+    r: { x: 10, l: { x: 1, l: null, r: null }, r: null }
+  } } },
+    r: { x: 10, l: { x: 1, l: null, r: null }, r: null }
+  }
+
+  var T2 = {
+    l: null,
+    r: null
+  }
+
+  it('is accurate', (done) => {
+    expect(solution(T1)).to.equal(5)
+    expect(solution(T2)).to.equal(0)
+    done()
+  })
+})
+
+// strSymmetryPoint
+describe('Algorithm', () => {
+
+  it('is accurate', (done) => {
+    expect(solution('racecar')).to.equal(3)
+    expect(solution('aba')).to.equal(1)
+    expect(solution('ab')).to.equal(-1)
+    expect(solution('racecra')).to.equal(-1)
+    expect(solution('x')).to.equal(0)
+    expect(solution('')).to.equal(-1)
+    done()
+  })
+})

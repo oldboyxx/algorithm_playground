@@ -2,17 +2,11 @@ var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
 var solution = require('./classic/random/getAllCombinations')
-var solution = require('./beatmycode/digitSum')
+var solution = require('./codility/futureTraining/arrayInversionCount')
 
 // FIDDLE
 
-console.log(solution('1000000'))
-
-/*1
-3
-2
-4
-5*/
+console.log(solution([-1, 6, 3, 4, 7, 4])) // 4
 
 // TESTS
 
@@ -20,8 +14,10 @@ if (typeof describe === 'undefined') return
 describe('Algorithm', () => {
 
   it('is accurate', (done) => {
-    expect(solution([1, -2, 0, 9, -1, -2])).to.equal(8)
-    expect(solution([1, 2])).to.equal(3)
+    expect(solution([])).to.equal(0)
+    expect(solution([1])).to.equal(0)
+    expect(solution([-1, 6, 3, 4, 7, 4])).to.equal(4)
+    expect(solution([1, 2, 3, 4, 5])).to.equal(0)
     done()
   })
 
