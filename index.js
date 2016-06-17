@@ -1,11 +1,18 @@
 var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
-var solution = require('./codility/17_dynamicProgramming/numberSolitaire')
+var solution = require('./classic/random/getAllCombinations')
+var solution = require('./beatmycode/digitSum')
 
 // FIDDLE
 
-console.log(solution([1, -2, 0, 9, -1, -2])) // 8
+console.log(solution('1000000'))
+
+/*1
+3
+2
+4
+5*/
 
 // TESTS
 
