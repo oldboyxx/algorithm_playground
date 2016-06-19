@@ -10,7 +10,7 @@ function solution(a) {
 
   var diff = Math.abs(sum1-sum2)
 
-  return diff
+  console.log(diff)
 }
 
 module.exports = solution
