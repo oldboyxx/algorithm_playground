@@ -1,17 +1,13 @@
 var _ = require('lodash')
 var expect = require('chai').expect
 var perf = require('performance-now')
-var solution = require('./hackerrank/search/pairs')
+var solution = require('./hackerrank/graphTheory/breadthFirstSearchShortestReach')
 
 // FIDDLE
 
-solution('5 2\n1 5 3 4 2')
-solution('5 2\n1 2 3 4 5')
-solution('5 1\n1 5 3 4 2')
-solution('5 1\n1 2 3 4 5')
-solution('5 1\n2 1')
-solution('5 1\n2')
-solution('5 1\n')
+solution('2\n4 2\n1 2\n1 3\n1\n3 1\n2 3\n2')
+
+
 
 // TESTS
 
