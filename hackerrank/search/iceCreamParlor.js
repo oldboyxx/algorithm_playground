@@ -27,3 +27,18 @@ function solution(input) {
 }
 
 module.exports = solution
+
+/*
+Sunny and Johnny together have  dollars they want to spend on ice cream. The parlor offers  flavors, and they want to choose two flavors so that they end up spending the whole amount.
+
+You are given the cost of these flavors. The cost of the  flavor is denoted by . You have to display the indices of the two flavors whose sum is .
+
+Input Format
+
+The first line of the input contains ;  test cases follow.
+Each test case follows the format detailed below: The first line contains . The second line contains . The third line contains  space-separated integers denoting the price of each flavor. Here, the  integer denotes .
+
+Output Format
+
+Output two integers, each of which is a valid index of a flavor. The lower index must be printed first. Indices are indexed from  to .
+*/
